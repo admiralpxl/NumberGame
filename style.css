@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.conter {
+    background-image: linear-gradient(to right top, #bc3e2b, #a8770e, #81a241, #4ac291, #1ddbe3);
+    height: 100vh;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    height: 100vh;
+    position: relative;
+}
+.glass {
+    background: rgba( 255, 255, 255, 0.40 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 11.0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 90%;
+    height: 90%;
+    max-width: 200px;
+    max-height: 200px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-items: center ;
+    font-size: 8rem;
+    font-weight: bolder;
+    color: white;
+}
+.caja{
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    width: 60px;
+    height: 40px;
+    background-color: rgba(39, 36, 36, 0.555);
+    align-items: center;
+    justify-content: center;
+}
+.puntaje {
+    border-bottom-right-radius: 30px;
+    justify-self: start;
+    align-self: start;
+}
+.niveles {
+    border-bottom-left-radius: 30px;
+    justify-self: end;
+    align-self: start;
+}
+.tiempos {
+    border-top-right-radius: 30px;
+    justify-self: start;
+    align-self: end;
+}
+.reglas {
+    border-top-left-radius: 30px;
+    justify-self: end;
+    align-self: end;
+    width:100px;
+    cursor: pointer;
+}
+.letra {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: white;
+}
+.reglas ul {
+    display: none;
+    width: 270px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.61);
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    list-style: none;
+    border-radius: 20px;
+}
+.reglas ul li{
+    margin: 10px;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.reglas:hover ul, ul:hover {
+    display: block;
+    
+}
+
+.right{
+    justify-self: start;
+}
+.left {
+    justify-self: end;
+}
+.boton {
+    position: absolute; 
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: center;
+    align-self: center;
+    outline: none;
+    border: none;
+    width: 80%;
+    max-width: 150px;
+    height: 70px;
+    border-radius: 20px;
+    font-size: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.473);
+    color: white;
+}
+.boton:hover {
+    background-color: rgba(220, 20, 60, 0.411);
+}
+.hide {
+    display: none;
+}
+.esconder {
+    animation-name: voltear;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.revelar {
+    animation-name: voltear;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+@keyframes voltear{
+    from {
+        transform: rotateY(0deg);
+        border-radius: 100%;
+    }
+    50% {
+        background-color: white;
+    }
+    to {    
+        transform: rotateY(180deg);
+        background-color: white;
+        border-radius: 10px;
+    }
+}
